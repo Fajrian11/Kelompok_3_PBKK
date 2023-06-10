@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class pasien extends Model
+{
+    use HasFactory;
+
+    protected $table = "pasiens";
+    protected $primarykey = "id";
+    protected $guarded = ['id'];
+
+    public function pelayanan(){
+        return $this->belongsTo(pelayanan::class);
+    }
+}
